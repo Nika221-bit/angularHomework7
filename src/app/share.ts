@@ -16,9 +16,11 @@ export class Share {
         return this.todos
   }
 
-  deleteTodo(index:number):void{
-       this.todos.splice(index,1)
+  deleteTodo(index: number): void {
+  if (index >= 0 && index < this.todos.length) {
+    this.todos.splice(index, 1);
   }
+}
 
   deleteAll():void{
     this.todos = [];

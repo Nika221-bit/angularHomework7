@@ -1,7 +1,14 @@
+<main>
+<h3>Total tasks: {{ todo.getTodo().length }}</h3>
+
 <ul>
-@for (todo of todo.getTodo(); track $index) {
-    <li>{{todo}} <button (click)="todo.deleteTodo($index)">delete</button></li>
-    
-}
+  @for (item of todo.getTodo(); track $index) {
+    <li>
+      {{ item }}
+      <button (click)="todo.deleteTodo($index)">delete</button>
+    </li>
+  }
 </ul>
+
 <button (click)="todo.deleteAll()">clear</button>
+</main>
