@@ -1,14 +1,16 @@
 <main>
-<h3>Total tasks: {{ todo.getTodo().length }}</h3>
+  <h3>Total tasks: {{ todo.getTodo().length }}</h3>
 
-<ul>
-  @for (item of todo.getTodo(); track $index) {
-    <li>
-      {{ item }}
-      <button (click)="todo.deleteTodo($index)">delete</button>
-    </li>
-  }
-</ul>
+  <ul>
+    @for (item of todo.getTodo(); track $index) {
+      <li>
+        <p>{{ item }}</p>
+        <input #editInput type="text" placeholder="Edit todo">
+        <button (click)="todo.deleteTodo($index)">delete</button>
+        <button (click)="todo.editTodo($index, editInput.value)">Save</button>
+      </li>
+    }
+  </ul>
 
-<button (click)="todo.deleteAll()">clear</button>
+  <button (click)="todo.deleteAll()">clear</button>
 </main>

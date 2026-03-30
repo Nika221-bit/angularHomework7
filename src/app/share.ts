@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class Share {
   todos:string[]=[];
  
+   
   addTodo(todo: string): void {
     if (todo.trim()) {
       this.todos.push(todo.trim());
@@ -25,4 +26,11 @@ export class Share {
   deleteAll():void{
     this.todos = [];
   }
+  editTodo(index:number,newTodo:string):void{
+    if(index >= 0 && index < this.todos.length && newTodo.trim()){
+       this.todos[index]=newTodo.trim();
+    }
+  }
+ 
+
 }
