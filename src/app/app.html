@@ -1,2 +1,8 @@
-<app-home></app-home>
-<app-about></app-about>
+<div [class]="theme" class="app-container">
+  <button (click)="changeTheme()">
+    {{ getThemeEmoji() }} Change Theme
+  </button>
+
+  <app-home></app-home>
+  <app-about></app-about>
+</div>

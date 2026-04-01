@@ -10,4 +10,5 @@ import { CommonModule, NgForOf } from "../../../node_modules/@angular/common/typ
 })
 export class About {
    constructor(public todo : Share){}
+   
 }
